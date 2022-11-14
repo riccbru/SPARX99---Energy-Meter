@@ -55,8 +55,8 @@
                 }
 
                 while ($row = $result -> fetch_assoc()) {
-                    echo "<tr>";
- 					echo "<td>" . $row["ID"] . "</td>";
+                   echo "<tr>";
+                   echo "<td>" . $row["ID"] . "</td>";
                   	echo "<td>" . $row["DateTime"] . "</td>";
                   	echo "<td>" . $row["ActiveEnergy"] . "</td>";
                   	echo "<td>" . $row["PassiveEnergy"] . "</td>";

@@ -124,7 +124,7 @@ void httpRequest(int id, float in, float ex)                              /////h
     Serial.println("[*] Connected to server");
 
     //URL PHP
-    String url = "GET /energy-measure/backModbus.php?ind=" + String(id) + 
+    String url = "GET /energy-meter/backModbus.php?ind=" + String(id) + 
     "&activeEn='" + String(in, 2) + 
     "'&passiveEn='" + String(ex, 2) + 
     "' HTTP/1.1";    

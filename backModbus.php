@@ -6,10 +6,10 @@ if(isset($_GET["ind"]) & isset($_GET["activeEn"]) & isset($_GET["passiveEn"])) {
     $activeEn = $_GET["activeEn"];
     $passiveEn = $_GET["passiveEn"];
     
-    $server = "localhost";
-    $user = "sparx99";
-    $passwd = "wgIJwDaqtS";
-    $db = "sparx99_misure-energia";
+    $server = "localhost";          // mysql server address
+    $user = "";                     // database username
+    $passwd = "";                   // database password
+    $db = "sparx99_energy-meter";   // database name
     
     $connection = new mysqli($server, $user, $passwd, $db);
 

@@ -7,8 +7,8 @@ if(isset($_GET["ind"]) & isset($_GET["activeEn"]) & isset($_GET["passiveEn"])) {
     $passiveEn = $_GET["passiveEn"];
     
     $server = "localhost";          // mysql server address
-    $user = "";                     // database username
-    $passwd = "";                   // database password
+    $user = "";                     // mysql username
+    $passwd = "";                   // mysql password
     $db = "sparx99_energy-meter";   // database name
     
     $connection = new mysqli($server, $user, $passwd, $db);

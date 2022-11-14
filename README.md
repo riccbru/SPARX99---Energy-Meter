@@ -4,7 +4,7 @@ I realized this project for a customer's request who owns 6 apartments and wante
 
 So you will need:
 1. Arduino MKR1000 with Wi-Fi Shield
-2. SDM120CT Modbus, Eastron
+2. SDM120CT Modbus made by Eastron
 3. HTTP Server on LAN
 
 Firstly I built the Arduino board and downloaded the ArduinoModbus library from Arduino software.

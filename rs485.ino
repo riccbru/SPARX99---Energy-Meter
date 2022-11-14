@@ -13,9 +13,9 @@
 #include <ArduinoHttpClient.h>
 
 //  Wi-Fi Credentials
-const char ssid[] = "PELLICCIOTTI";          // PELLICCIOTTI Ciclarimpo_2.4GHz
-const char pass[] = "SiccomeImmobile99"; // SiccomeImmobile99 Quelchenonpioveincielost4?
-char server[] = "sparx99.it";
+const char ssid[] = "";     // Wi-Fi SSID
+const char pass[] = "";     // Wi-Fi password
+char server[] = "";         // server name
 int port = 80;
 
 int status = WL_IDLE_STATUS;
@@ -47,14 +47,15 @@ void setup() {                                                            /////S
 
 void loop() {                                                             /////LOOP/////
   /*
-    for (int i = 1; i < 7; i++) {
+    int measurer_num = 5;   // if you connected more than one measurer
+    for (int i = 1; i <= measurer_num; i++) {
     float in = readActiveEnergy(i);
     float ex = readPassiveEnergy(i);
     httpRequest(i, in, ex);
     delay(2000);
     }
   */
-  httpRequest(7, 0.01, 0.10);
+  httpRequest(1, 0.01, 0.10);
 
   delay(msdelay);
 }
@@ -117,30 +118,20 @@ float readPassiveEnergy(int id)                                          /////re
 void httpRequest(int id, float in, float ex)                              /////httpRequest()/////
 {
   if (!wifi.connect(server, port)) {
-    Serial.println("[!] Failed connecting to sparx99.it");
+    Serial.println("[!] Failed connection");
   }
   else {
-    Serial.println("[*] Connected to sparx99.it");
-
-    /*
-    // URL PHP
-    String url = "GET /misure-energia/backModbus.php?";
-    url += "ind=" + String(id);
-    url += "&activeEn='" + String(in, 2) + "'";
-    url += "&passiveEn='" + String(ex, 2) + "'";
-    url += " HTTP/1.1";
-    // URL PHP
-    */
+    Serial.println("[*] Connected to server");
 
     //URL PHP
-    String url = "GET /misure-energia/backModbus.php?ind=" + String(id) + 
+    String url = "GET /energy-measure/backModbus.php?ind=" + String(id) + 
     "&activeEn='" + String(in, 2) + 
     "'&passiveEn='" + String(ex, 2) + 
     "' HTTP/1.1";    
     //URL PHP
 
     httpclient.println(url);
-    httpclient.println("Host: sparx99.it");
+    httpclient.println("Host: ");
     httpclient.println("Connection: close");
     httpclient.println();
 

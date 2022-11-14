@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Sparx99 - Andreassi</title>
+    <title>Sparx99 - Energy-Meter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Data&Ora</th>
+                    <th>DateTime</th>
                     <th>Active Energy</th>
                     <th>Passive Energy</th>
                 </tr>
@@ -34,10 +34,10 @@
             
             if (isset($_GET["ind"])) {
                 
-                $server = "localhost";
-                $user = "sparx99";
-                $passwd = "wgIJwDaqtS";
-                $db = "sparx99_misure-energia";
+                $server = "localhost";          // mysql server address
+                $user = "";                     // mysql username
+                $passwd = "";                   // mysql password
+                $db = "sparx99_energy-meter";   // database name
                 
                 $connection = new mysqli($server, $user, $passwd, $db);
                 
@@ -46,7 +46,6 @@
                 }
                 
                 $table = "andreassi" . $_GET["ind"];
-                //$sql = "INSERT INTO andreassi1 (DateTime, ActiveEnergy, PassiveEnergy) VALUES (NOW(), 0.01, 0.1);";
                 $sql = "SELECT * FROM $table ORDER BY ID DESC";
                 
                 $result = $connection -> query($sql);

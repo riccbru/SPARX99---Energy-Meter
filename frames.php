@@ -45,7 +45,7 @@
                     die();
                 }
                 
-                $table = "andreassi" . $_GET["ind"];
+                $table = $_GET["ind"];
                 $sql = "SELECT * FROM $table ORDER BY ID DESC";
                 
                 $result = $connection -> query($sql);

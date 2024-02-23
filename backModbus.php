@@ -2,14 +2,14 @@
 
 if(isset($_GET["ind"]) & isset($_GET["activeEn"]) & isset($_GET["passiveEn"])) {
 
-    $table = "andreassi" . $_GET["ind"];
+    $table = $_GET["ind"];
     $activeEn = $_GET["activeEn"];
     $passiveEn = $_GET["passiveEn"];
     
     $server = "localhost";          // mysql server address
     $user = "";                     // mysql username
     $passwd = "";                   // mysql password
-    $db = "sparx99_energy-meter";   // database name
+    $db = "";                       // database name
     
     $connection = new mysqli($server, $user, $passwd, $db);
 
